@@ -11,52 +11,44 @@
 </head>
 
 <body>
-    <div>
+    <div id="calculator">
         <table>
             <thead>
-                <input id="input">
+                <input id="input" style="width: 100%; background-color:rgb(161, 157, 157);">
             </thead>
             <tbody>
                 <tr>
-                    <td></td>                    
+                    <td colspan="2"><button id="delete" style="width:100%">del</button></td>           
                     <td><button id="clear">c</button></td>
-                    <td><button id="delete">del</button></td>
-                    <td><button class="cal">/</button></td>
+                    <td><button class="numBtns">/</button></td>
                 </tr>
                 <tr>
-                    <td><button class="cal">7</button></td>
-                    <td><button class="cal">8</button></td>
-                    <td><button class="cal">9</button></td>
-                    <td><button class="cal">*</button></td>
+                    <td><button class="numBtns">7</button></td>
+                    <td><button class="numBtns">8</button></td>
+                    <td><button class="numBtns">9</button></td>
+                    <td><button class="numBtns">*</button></td>
                 </tr>
                 <tr>
-                    <td><button class="cal">4</button></td>
-                    <td><button class="cal">5</button></td>
-                    <td><button class="cal">6</button></td>
-                    <td><button class="cal">-</button></td>
+                    <td><button class="numBtns">4</button></td>
+                    <td><button class="numBtns">5</button></td>
+                    <td><button class="numBtns">6</button></td>
+                    <td><button class="numBtns">-</button></td>
                 </tr>
                 <tr>
-                    <td><button class="cal">1</button></td>
-                    <td><button class="cal">2</button></td>
-                    <td><button class="cal">3</button></td>
-                    <td><button class="cal">+</button></td>
+                    <td><button class="numBtns">1</button></td>
+                    <td><button class="numBtns">2</button></td>
+                    <td><button class="numBtns">3</button></td>
+                    <td><button class="numBtns">+</button></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td><button class="cal">0</button></td>
-                    <td><button class="cal">.</button></td>
+                    <td colspan="2" ><button class="numBtns" style="width:100%">0</button></td>
+                    <td><button class="numBtns">.</button></td>
                     <td><button id="calculate">=</button></td>
                 </tr>
             </tbody>
-        </table>
-    </div>
-    <div class="result">
-        <span>
-            계산 기록
-        </span>
-        <br><span>결과1</span>
-        <br><span>결과2</span>
-    </div>
+        </table>       
+        <div id="resultMemo">계산기록</div>
+        <div id="result"></div>
     <script src="calculator.js"></script>
 </body>
 

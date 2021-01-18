@@ -1,15 +1,17 @@
 let inputBox = document.getElementById("input");
-let btns = document.getElementsByClassName("cal");
+let btns = document.getElementsByClassName("numBtns");
 let computeBtn = document.getElementById("calculate");
 let deleteBtn = document.getElementById("delete");
 let clearBtn = document.getElementById("clear");
+let resultDisplay = document.getElementById("result");
 
-//  숫자나 연산자를 클릭할 때마다 inputBox에 추가
-for (let i = 0; i < btns.length; i++) {
+
+
+for (let i = 0; i < btns.length; i++) { // 버튼에 해당하는 값 추가
   btns[i].addEventListener("click", function addEvent() {
-    inputBox.value += btns[i].innerHTML; // click 할 때마다 숫자나 연산자가 추가
+    inputBox.value += btns[i].innerHTML; // 
   });
-} // addEventListener에서는 레퍼런스, - 넣어야함
+} 
 
 //  eval()로 문자열 계산 구현, inputBox초기화
 computeBtn.addEventListener("click", function () {
@@ -17,21 +19,32 @@ computeBtn.addEventListener("click", function () {
   if (result === undefined) {
     alert("수식을 입력하세요.");
   } else {
-    alert(`${inputBox.value} = ${result}`); // 출력
+    let y = document.createElement("div");
+    let z = document.createTextNode(`${inputBox.value} = ${result}`);
+    y.appendChild(z);
+    resultDisplay.prepend(y);  // 출력 후 계산기록에 추가  / 최신이 위로 가게 함.
+    
+    if (resultDisplay.childElementCount === 5){
+      resultDisplay.removeChild(resultDisplay.lastChild);
+    }
   }
   inputBox.value = ""; //초기화
 });
 
-// 지우기 기능
 
-deleteBtn.addEventListener("click", function () {
-  inputBox.value = inputBox.value.slice(0, -1); // string 뒤에서 하나 제거
+
+deleteBtn.addEventListener("click", function () {  // 값 하나 지우기 Del Btn
+  inputBox.value = inputBox.value.slice(0, -1);
 });
 
-// 전체 지우기 기능
 
-clearBtn.addEventListener("click", function () {
-  inputBox.value = "";
+
+clearBtn.addEventListener("click", function () { // 값 전체 초기화 C Btn
+  inputBox.value = ""; 
 });
 
-// 결과 html코드 추가메모리로 보여주기? 연산자로 끝나거나 오류 발생시 어떠캄
+// 결과 html코드 추가메모리로 보여주기? 
+
+
+
+
