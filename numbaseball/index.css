@@ -1,4 +1,8 @@
 .inputBox {
-    position: fixed;
     font-weight: bold;
+}
+
+#main{
+    padding: 200px; 
+    margin-left: 200px;
 }
